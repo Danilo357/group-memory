@@ -50,7 +50,7 @@ function timer() {
   timerRunning = true
   setInterval(function() {
     var elapsedTime = Date.now() - startTime
-    $(".timer").html(`Time: ${getTimeStr(elapsedTime)}`)
+    $("#timer").html(`Time: ${getTimeStr(elapsedTime)}`)
     // console.log(getTimeStr(elapsedTime))
   }, 100)
 }
