@@ -7,13 +7,26 @@
     <link rel="stylesheet" href="style.css" />
     <title>Memory Game</title>
   </head>
+
   <body>
     <div id="card-array">
-      <button id="reset" onClick="resetGame()">Reset</button>
-      <br />
+      <div class="scorepanel">
+        <ul>
+          <li id="timer">Time: 00:00</li>
+          <li class="turns">Turns:</li>
+          <li>
+            <button id="reset" onClick="resetGame()">Reset</button>
+          </li>
+        </ul>
+      </div>
       <div id="buttons">
         <!-- Location of Rendering Cards -->
       </div>
+    </div>
+
+    <div id="fireworks">
+      <img src="https://media.giphy.com/media/2y8rqfdqw807e/giphy.gif" />
+      <div class="winnerScreen"></div>
     </div>
 
     <script
@@ -21,6 +34,8 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
+    <!-- <script src="//code.jquery.com/jquery-3.1.1.min.js"></script> -->
+    <!-- <script src="jquery.fireworks.js"></script> -->
     <script src="variables.js"></script>
     <script src="main.js"></script>
   </body>
