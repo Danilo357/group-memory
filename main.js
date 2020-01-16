@@ -132,18 +132,33 @@ function handleGame() {
 // }
 
 function finalscreen() {
-  if (result === 9 || result === 10) {
+  if (result < 5 && result > 17) {
     outcome = "Amazing"
-  } else if (result === 7 || result === 8) {
+  } else if (result <= 18 || result > 21) {
     outcome = "Great Job"
-  } else if (result === 5 || result === 6) {
+  } else if (result <= 22 || result > 25) {
     outcome = "Not Bad"
-  } else if (result === 3 || result === 4) {
+  } else if (result <= 26 || result > 29) {
     outcome = "Pretty Bad"
-  } else if (result < 3) {
-    outcome = "You Suck!"
+  } else if (result < 30) {
+    outcome = "really bad!"
+  } else {
   }
 }
+
+// function finalscreen() {
+//   if (result === 9 || result === 10) {
+//     outcome = "Amazing"
+//   } else if (result === 7 || result === 8) {
+//     outcome = "Great Job"
+//   } else if (result === 5 || result === 6) {
+//     outcome = "Not Bad"
+//   } else if (result === 3 || result === 4) {
+//     outcome = "Pretty Bad"
+//   } else if (result < 25) {
+//     outcome = "really bad!"
+//   }
+// }
 
 // function winnerScreen() {
 //   result = turnbonus + timerbonus
@@ -180,9 +195,9 @@ function winnerScreen() {
   result = turnbonus + timerbonus
 
   finalscreen()
-
+  //  <p> It took you ${secs} seconds.</p> ide ispod izmedju turn and outcome
   var finalpage = `<p class="finalpage">
-                   <p> It took you ${secs} seconds.</p>
+                  
                    <p> It took you ${turn} turns </p>
                    <p> Your outcome is: ${outcome}</p>
   `
@@ -193,17 +208,17 @@ function winnerScreen() {
   $(".winnerScreen").show()
 }
 
-function getTimeStr(milliseconds) {
-  var minutes = milliseconds / 60000
-  var sec = milliseconds / 1000
-  var intMinutes = Math.floor(minutes)
-  var seconds = Math.floor((minutes - intMinutes) * 60)
-  return (
-    intMinutes +
-    ":" +
-    (seconds < 10 ? "0" + seconds.toFixed(0) : seconds.toFixed(0))
-  )
-}
+// function getTimeStr(milliseconds) {
+//   var minutes = milliseconds / 60000
+//   var sec = milliseconds / 1000
+//   var intMinutes = Math.floor(minutes)
+//   var seconds = Math.floor((minutes - intMinutes) * 60)
+//   return (
+//     intMinutes +
+//     ":" +
+//     (seconds < 10 ? "0" + seconds.toFixed(0) : seconds.toFixed(0))
+//   )
+// }
 
 function turnsScore() {
   if (turn >= 0 && turn <= 15) {
@@ -291,18 +306,20 @@ function turnsScore(tu) {
   }
 }
 
-// function timerscore() {
-//   let howmanysecs = sec
+function timerscore() {
+  let howmanysecs = secs
 
-//   if (howmanysecs < 60) {
-//     timerbonus = 3
-//   } else if (howmanysecs >= 60 && howmanysecs < 120) {
-//     timerbonus = 2
-//   } else if (howmanysecs >= 120 && howmanysecs < 180) {
-//     timerbonus = 1
-//   } else {
-//     timerbonus = 0
-//   }
+  if (howmanysecs < 60) {
+    timerbonus = 3
+  } else if (howmanysecs >= 60 && howmanysecs < 120) {
+    timerbonus = 2
+  } else if (howmanysecs >= 120 && howmanysecs < 180) {
+    timerbonus = 1
+  } else {
+    timerbonus = 0
+  }
+}
+
 $(document).ready(function() {
   readyDeck(deck)
   handleGame()

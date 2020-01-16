@@ -20,11 +20,11 @@ html {
 }
 
 #buttons button {
-  width: 170px;
-  height: 160px;
+  width: 190px;
+  height: 180px;
   margin: 2px;
-  font-size: 2rem;
-  border-radius: 70px;
+  font-size: 1.5rem;
+  border-radius: 40px;
   justify-content: space-between;
 }
 
@@ -149,7 +149,8 @@ button:hover {
 /* }  */
 
 .face-down {
-  background: black;
+  background: url("memory.jpg");
+  background-size: 180px 150px;
 }
 
 .face-up {
