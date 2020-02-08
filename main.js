@@ -3,11 +3,10 @@ function shuffle(deck) {
   let temporaryValue
   let randomIndex
   const newArray = deck.slice()
-  // While there remains elements to shuffle...
+
   while (currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex)
     currentIndex -= 1
-    // Swap it with the current element.
     temporaryValue = newArray[currentIndex]
     newArray[currentIndex] = newArray[randomIndex]
     newArray[randomIndex] = temporaryValue
@@ -22,12 +21,6 @@ function readyDeck(deck) {
   deck.forEach(l => {
     buttons += `<button class="face-down">${l.toUpperCase()}</button>`
   })
-
-  // deck2 = shuffle(deck2)
-
-  // deck2.forEach(l => {
-  //   buttons += `<button class="face-down">${l.toUpperCase()}</button>`
-  // })
 
   $("#buttons").html(buttons)
 }
@@ -120,17 +113,6 @@ function handleGame() {
   })
 }
 
-// function getTimeStr(sec) {
-//   var minutes = sec / 60
-//   var seconds = Math.floor((minutes - Math.floor(minutes)) * 60)
-//   return (
-//     "0" +
-//     Math.floor(minutes) +
-//     ":" +
-//     (seconds < 10 ? "0" + seconds.toFixed(0) : seconds.toFixed(0))
-//   )
-// }
-
 function finalscreen() {
   if (result < 5 && result > 17) {
     outcome = "Amazing"
@@ -145,51 +127,6 @@ function finalscreen() {
   } else {
   }
 }
-
-// function finalscreen() {
-//   if (result === 9 || result === 10) {
-//     outcome = "Amazing"
-//   } else if (result === 7 || result === 8) {
-//     outcome = "Great Job"
-//   } else if (result === 5 || result === 6) {
-//     outcome = "Not Bad"
-//   } else if (result === 3 || result === 4) {
-//     outcome = "Pretty Bad"
-//   } else if (result < 25) {
-//     outcome = "really bad!"
-//   }
-// }
-
-// function winnerScreen() {
-//   result = turnbonus + timerbonus
-//   console.log(outcome)
-//   if (result === 9 || result === 10) {
-//     outcome = "Amazing"
-//   } else if (result === 7 || result === 8) {
-//     outcome = "Great Job"
-//   } else if (result === 5 || result === 6) {
-//     outcome = "Not Bad"
-//   } else if (result === 3 || result === 4) {
-//     outcome = "Pretty Bad"
-//   } else if (result < 3) {
-//     outcome = "You Suck!"
-//   }
-
-//   finalscreen()
-
-//   var finalpage = `<p class="finalpage">
-//                    <p> It took you ${secs} seconds.</p>
-//                    <p> It to you ${turn} turns </p>
-//                    <p> Your outcome is: ${outcome}</p>
-//   `
-//   $(".winnerScreen").html(finalpage)
-// ​
-//   $("#fireworks").show()
-// ​
-//   $(".winnerScreen").show()
-// ​
-//   win.play()
-// }
 
 function winnerScreen() {
   result = turnbonus + timerbonus
@@ -207,18 +144,6 @@ function winnerScreen() {
 
   $(".winnerScreen").show()
 }
-
-// function getTimeStr(milliseconds) {
-//   var minutes = milliseconds / 60000
-//   var sec = milliseconds / 1000
-//   var intMinutes = Math.floor(minutes)
-//   var seconds = Math.floor((minutes - intMinutes) * 60)
-//   return (
-//     intMinutes +
-//     ":" +
-//     (seconds < 10 ? "0" + seconds.toFixed(0) : seconds.toFixed(0))
-//   )
-// }
 
 function turnsScore() {
   if (turn >= 0 && turn <= 15) {
@@ -327,7 +252,3 @@ $(document).ready(function() {
     turnsScore()
   }, 1000)
 })
-// $(document).ready(function() {
-//   readyDeck(deck)
-//   handleGame()
-// })

@@ -16,7 +16,6 @@ html {
   text-align: center;
   width: 80%;
   margin-left: 95px;
-  /* margin-right: 50px; */
 }
 
 #buttons button {
@@ -132,22 +131,6 @@ button:hover {
   }
 }
 
-/* #card-array {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  margin: auto;
-  position: relative;
-} */
-
-/* /* #buttons button {
-  width: 150px;
-  height: 150px;
-  margin: 2px;
-  font-size: 2rem;
-  /* background: black; */
-/* }  */
-
 .face-down {
   background: url("memory.jpg");
   background-size: 180px 150px;
@@ -187,7 +170,6 @@ div.scorepanel ul {
 .scorepanel {
   display: flex;
   justify-content: space-evenly;
-  /* list-style: none; */
 }
 .outcome {
   color: black;
@@ -196,7 +178,6 @@ div.scorepanel ul {
 #fireworks {
   width: 900px;
   height: 800px;
-  /* background-image:url(); */
   display: none;
   top: 0;
   position: absolute;
